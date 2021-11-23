@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="cal.css">
+	<title>calculator</title>
+</head>
+<body>
+		   <div class="cal">
+		   		<div class="calcul">
+		   				<div class="border" id="result">
+		   					<div  id="res"></div>
+		   					<div id="total"></div>
+		   				</div>
+		   				<div class="calculator">
+		   					<div class="num">
+							<button onclick="show(7)"><b>7</b></button><button onclick="show(8)"><b>8</b></button><button onclick="show(9)"><b>9</b></button><button id="del" onclick="myFuncd()">Del</button>
+							
+						</div> 
+						<div class="num2"> 
+					<button onclick="show(4)"><b>4</b></button><button onclick="show(5)"><b>5</b></button><button onclick="show(6)"><b>6</b></button><button id="del" onclick="show('/')">/</button>
+				</div>
+					<div class="num3">
+						<button onclick="show(1)"><b>1</b></button><button onclick="show(2)"><b>2</b></button><button onclick="show(3)"><b>3</b></button><button  onclick="show('*')" id="del">*</button>
+					</div>
+					
+					<div class="num5">
+						<button onclick="show('.')"><b>.</b></button><button onclick="show(0)"><b>0</b></button>
+						<button onclick="equate()"><b>=</b></button>
+						<button onclick="show('-')" id="del">-</button>
+					</div>
+					<div class="case">
+						<button id="bolo" onclick="turn()">ON</button>
+						<button id="colo" onclick="show('%')">%</button><button id="folo" onclick="Zero()">AC</button><button id="delo" onclick="show('+')">+</button>
+					</div>
+		   				</div>
+		             	
+						
+
+				
+			</div>
+			
+		
+		
+	</div>
+	
+	<script type="text/javascript">
+		function show(a){
+			if (res.innerHTML=="") {
+				res.innerHTML=a;
+			}
+			else{
+				res.innerHTML+=a;
+			}
+			
+		}
+		function turn(){
+			if (bolo.innerHTML=="ON") {
+				bolo.innerHTML="OFF";
+				res.style.display="block";
+				res.innerHTML=0;
+				
+			}
+			else if ( bolo.innerHTML=="OFF"){
+				bolo.innerHTML="ON";
+				res.style.display="none";
+
+
+
+				
+			}
+
+		}
+		function myFuncd(){
+			var e =res.innerHTML.slice(0, -1);
+			res.innerHTML=e;
+			var w = total.innerHTML.slice(0, -1);
+			total.innerHTML = w;
+
+		}
+		
+		function Zero(){
+			res.innerHTML=0;
+			total.innerHTML=0;
+		}
+
+		function equate(){
+			total.innerHTML= eval(res.innerHTML);
+			
+
+		}		
+	</script>
+
+</body>
+</html>
